@@ -133,6 +133,10 @@ function LingoProvider__Prod({
       if (Object.keys(initialTranslations).length > 0) {
         return;
       }
+      // Source locale text is already embedded in JSX as fallback — no file to fetch
+      if (targetLocale === sourceLocale) {
+        return;
+      }
 
       setIsLoading(true);
       try {
@@ -163,7 +167,7 @@ function LingoProvider__Prod({
 
   // Load translations on mount if not provided via initialTranslations
   useEffect(() => {
-    if (Object.keys(initialTranslations).length === 0) {
+    if (Object.keys(initialTranslations).length === 0 && locale !== sourceLocale) {
       loadTranslations(locale);
     }
   }, []); // Only run on mount
