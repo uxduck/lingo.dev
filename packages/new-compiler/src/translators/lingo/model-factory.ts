@@ -2,6 +2,7 @@
  * Shared utilities for creating AI model instances
  */
 
+import { createAnthropic } from "@ai-sdk/anthropic";
 import { createGroq } from "@ai-sdk/groq";
 import { createGoogleGenerativeAI } from "@ai-sdk/google";
 import { createOpenRouter } from "@openrouter/ai-sdk-provider";
@@ -290,6 +291,9 @@ export function createAiModel(
 
     case "mistral":
       return createMistral({ apiKey: apiKey! })(model.name);
+
+    case "anthropic":
+      return createAnthropic({ apiKey: apiKey! })(model.name);
 
     default:
       // This should be unreachable due to check above

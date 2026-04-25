@@ -57,7 +57,7 @@ export const DEFAULT_TIMEOUTS = {
   METADATA: 15_000, // 15 seconds
 
   /** AI API calls for translation */
-  AI_API: 60_000, // 60 seconds
+  AI_API: 480_000, // 8 minutes
 
   /** HTTP requests to translation server */
   HTTP_REQUEST: 30_000, // 30 seconds

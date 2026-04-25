@@ -11,6 +11,13 @@ export interface ProviderDetails {
 }
 
 export const providerDetails: Record<string, ProviderDetails> = {
+  anthropic: {
+    name: "Anthropic",
+    apiKeyEnvVar: "ANTHROPIC_API_KEY",
+    apiKeyConfigKey: "llm.anthropicApiKey",
+    getKeyLink: "https://console.anthropic.com/get-api-key",
+    docsLink: "https://console.anthropic.com/docs",
+  },
   groq: {
     name: "Groq",
     apiKeyEnvVar: "GROQ_API_KEY",
